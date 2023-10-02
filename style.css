@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    background-color: blanchedalmond;
+    position: relative;
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 320px;
+}
+
+.memory-game-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 140px;
+    background-color: rgb(85, 77, 77);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.memory-game-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+}
+
+.front,
+.back {
+    position: absolute;
+    background-color: rgb(168, 75, 168);
+    height: 100%;
+    width: 100%;
+    background: #1C7CCC;
+    backface-visibility: hidden;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.memory-game-card.flip {
+    transform: rotateY(180deg);
+}
